@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body>
+    <div id="top">
+        <p style="font-size: 40px; margin-top: 0.4em;" id="road">Searching for GPS..</p>
+        <span id="gps-status"></span>
+    </div>
+    <div id="middle">
+        <div class="block">
+            <p class="title">Speed Limit</p>
+            <p class="value" id="speed">Searching..</p>
+        </div>
+        <div class="block" style="border-right: none;">
+            <p class="title">Car Speed</p>
+            <p class="value" id="obd_speed">Connecting..</p>
+        </div>
+    </div>
+    <div id="bottom">
+        <div class="menu-item" data-bs-toggle="modal" data-bs-target="#powerOptions">
+            <p>Power</p>
+
+            <!-- Modal -->
+            <div class="modal fade" id="powerOptions" tabindex="-1" aria-labelledby="powerOptionsLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Power Options</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div style="display: flex; flex-direction: column;height: 150px; justify-content: space-evenly;">
+                                <button type="button" class="btn btn-danger" onclick="send_command('poweroff')" style="padding: 1em">Power Off System</button>
+                                <button type="button" class="btn btn-warning" onclick="send_command('reboot')" style="padding: 1em">Reboot System</button>
+                                <!-- <button type="button" class="btn btn-info" style="padding: 1em">Restart Application</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-item" onclick="location.href='{{url_for('diagnostics')}}';">
+            <p>Diagnostics</p>
+        </div>
+        <div class="menu-item" onclick="toggle_theme()">
+            <p>Light/Dark Mode</p>
+        </div>
+        <div class="menu-item" style="border-right: none;" onclick="location.href='{{url_for('reverse_camera')}}';">
+            <p>Reverse Camera</p>
+        </div>
+    </div>
+
+</body>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body style="text-align: center;padding: 0; margin: 0;">
+    <div style="border: 0.1px grey solid; width: 100%;" onclick="location.href='{{url_for('index')}}'">
+        <p style="margin: 0.2em; font-size: 2.5em;">Back</p>
+    </div>
+    <div id="middle" style="height: 100%; margin-top: 0.5em; border-top:none">
+        <div class="block">
+            <h1 style="margin-bottom: 0;">Diagnostic Trouble Codes</h1>
+            <div class="stats">
+                <span>Engine</span>
+                <b><span id="MIL">Loading..</span></b>
+            </div>
+            <div class="stats" style="border-bottom: 0.1px grey solid;">
+                <span>DTC Errors</span>
+                <b><span id="DTC_Count">Loading..</span></b>
+            </div>
+            <div id="dtc-errors">
+                <b><span>No Errors to Display</span></b>
+            </div>
+        </div>
+        <div class="block" style="border-right: none;">
+            <h1 style="margin-bottom: 0;">General Info</h1>
+            <div class="stats">
+                <span>RPM</span>
+                <span id="RPM">Loading..</span>
+            </div>
+            <div class="stats">
+                <span>Engine Coolant Temperature</span>
+                <span id="COOLANT_TEMP">Loading..</span>
+            </div>
+            <div class="stats">
+                <span>Intake Air Temperature</span>
+                <span id="INTAKE_TEMP">Loading..</span>
+            </div>
+            <div class="stats">
+                <span>Absolute Load Value</span>
+                <span id="ABSOLUTE_LOAD">Loading..</span>
+            </div>
+            <div class="stats">
+                <span>Throttle Position</span>
+                <span id="RELATIVE_THROTTLE_POS">Loading..</span>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

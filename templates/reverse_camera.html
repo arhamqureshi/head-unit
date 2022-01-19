@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body style="text-align: center;padding: 0; margin: 0;">
+  <div style="border: 0.1px grey solid; width: 100%;" onclick="location.href='{{url_for('index')}}'">
+    <p style="margin: 0.2em; font-size: 2.5em;">Back</p>
+  </div>
+  <img style="margin-top:1em; height:80%; width:80%" src="{{ url_for('video_feed') }}">
+</body>
+{% endblock %}

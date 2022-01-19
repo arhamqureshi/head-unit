@@ -1,2 +1,3 @@
-# head-unit
-Custom Head Unit
+# DESN2010_A2
+
+DESN2010 - Assignment 2
